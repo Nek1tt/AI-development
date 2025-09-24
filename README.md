@@ -1,11 +1,57 @@
-# AI-development
+# Word2Vec Utils
 
-1) GenAI-1-14
+---
 
-Вывод для шага 2 (синонимы king)
+Набор файлов для работы с предобученной моделью Word2Vec через `gensim`:
+- `word2vec_utils.py` — две функции: `most_similar`, `analogy`.
+- `main.py` — CLI для удобного запуска.
+- `requirements.txt` — зависимости.
 
-[('kings', 0.7138045430183411), ('queen', 0.6510956287384033), ('monarch', 0.6413194537162781), ('crown_prince', 0.6204219460487366), ('prince', 0.6159993410110474), ('sultan', 0.5864822864532471), ('ruler', 0.5797566771507263), ('princes', 0.5646552443504333), ('Prince_Paras', 0.5432944297790527), ('throne', 0.5422104597091675)]
+## Обзор возможностей
+- Найти похожие слова (`most_similar`).
+- Решать аналогии вида `king - man + woman` (`analogy`).
 
-Вывод для шага 3 (аналогия для king - man + woman)
+---
 
-[('queen', 0.7118192911148071), ('monarch', 0.6189674735069275), ('princess', 0.5902431011199951), ('crown_prince', 0.549946129322052), ('prince', 0.5377321243286133), ('kings', 0.5236843824386597), ('Queen_Consort', 0.5235944390296936), ('queens', 0.5181134343147278), ('sultan', 0.5098593235015869), ('monarchy', 0.5087411403656006)]
+---
+
+## Установка (рекомендовано: виртуальное окружение)
+
+### Linux / macOS
+```bash
+# создать venv и активировать
+python3 -m venv .venv
+source .venv/bin/activate
+
+# обновить pip и установить зависимости
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+### Windows
+
+```bash
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+---
+
+---
+
+## Примеры использования
+
+```bash
+# самый простой: похожие слова
+python main.py similar --word king --topn 5
+```
+
+```bash
+# пример аналогии
+python main.py --positive king woman --negative man --topn 5
+```
+
+
+
+
