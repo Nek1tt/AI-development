@@ -72,7 +72,6 @@ def main(argv=None):
             return 2
 
     except KeyError as e:
-        # One of words not in vocab
         print(f"Vocabulary error: {e}", file=sys.stderr)
         return 3
     except ValueError as e:
@@ -87,3 +86,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
