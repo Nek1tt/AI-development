@@ -49,7 +49,7 @@ python main.py similar --word king --topn 5
 
 ```bash
 # пример аналогии
-python main.py --positive king woman --negative man --topn 5
+python main.py analogy --positive king woman --negative man --topn 5
 ```
 
 
